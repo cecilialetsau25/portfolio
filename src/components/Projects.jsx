@@ -20,14 +20,7 @@ const projectsData = [
     github: "https://github.com/cecilialetsau25/recipe_finder",
     image: recipeImg 
   },
-  {
-    title: "Cleanease Laundry System",
-    type: "Service Booking",
-    description: "Laundry management system built with Laravel + PHP.",
-    live: "#",
-    github: "#",
-    image: null
-  },
+
   {
     title: "React Tailwind Task Tracker",
     type: "Task Management App",

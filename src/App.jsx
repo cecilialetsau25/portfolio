@@ -11,7 +11,7 @@ export default function App() {
   return (
     <div
       className="bg-cover bg-center bg-fixed min-h-screen text-gray-800"
-      style={{ backgroundImage: "url('/src/assets/tech.jpg')" }}
+      style={{ backgroundImage: "url('/tech.jpg')" }}
     >
       <Navbar />
       <Hero />

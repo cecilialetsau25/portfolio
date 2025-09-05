@@ -5,8 +5,8 @@ import trackerImg from "../assets/tracker.png";
 import letsauImg from "../assets/letsau.png";
 import cleaneaseImg from "../assets/cleanease.png";
 import teketeImg from "../assets/tekete.png";
+import streamingImg from "../assets/streaming.png"; // 👈 Add your screenshot here
 import { FaGithub } from "react-icons/fa";
-
 
 const projectsData = [
   {
@@ -31,7 +31,8 @@ const projectsData = [
     title: "Melula Assignment",
     type: "E-commerce Frontend",
     role: "Frontend Developer",
-    description: "A fully responsive e-commerce frontend built with React and Tailwind CSS, designed to replicate the Melula homepage experience. Features include dynamic product listings, interactive UI components, and a mobile-friendly layout. The project emphasizes reusable components, clean state management, and accessibility best practices, providing a smooth and modern user experience.",
+    description:
+      "A fully responsive e-commerce frontend built with React and Tailwind CSS, designed to replicate the Melula homepage experience. Features include dynamic product listings, interactive UI components, and a mobile-friendly layout. The project emphasizes reusable components, clean state management, and accessibility best practices, providing a smooth and modern user experience.",
     live: "https://melula-assignment.vercel.app/",
     github: "https://github.com/cecilialetsau25/Melula_Assignment",
     image: melulaImg,
@@ -46,7 +47,8 @@ const projectsData = [
     title: "Recipe Finder",
     type: "Recipe Search App",
     role: "React Developer",
-    description: "A dynamic recipe search application developed with React that allows users to browse, search, and save recipes. The app includes dark mode, a responsive design, and client-side filtering to improve usability. Implemented modern React hooks for state and lifecycle management and designed components to be reusable and scalable. The project showcases clean UI/UX and practical use of APIs to fetch real-time recipe data.",
+    description:
+      "A dynamic recipe search application developed with React that allows users to browse, search, and save recipes. The app includes dark mode, a responsive design, and client-side filtering to improve usability. Implemented modern React hooks for state and lifecycle management and designed components to be reusable and scalable. The project showcases clean UI/UX and practical use of APIs to fetch real-time recipe data.",
     live: "https://recipe-finder-eight-pi.vercel.app/",
     github: "https://github.com/cecilialetsau25/recipe_finder",
     image: recipeImg,
@@ -60,7 +62,8 @@ const projectsData = [
     title: "React Tailwind Task Tracker",
     type: "Task Management App",
     role: "Frontend Developer",
-    description: "A productivity-focused task tracker built with React and Tailwind CSS. Users can create, update, and delete tasks, categorize them by status, and track progress in real-time. Features include smooth animations, responsive design, and intuitive UI interactions. The project emphasizes component-based architecture, state management with React hooks, and enhanced user experience through design consistency and visual feedback.",
+    description:
+      "A productivity-focused task tracker built with React and Tailwind CSS. Users can create, update, and delete tasks, categorize them by status, and track progress in real-time. Features include smooth animations, responsive design, and intuitive UI interactions. The project emphasizes component-based architecture, state management with React hooks, and enhanced user experience through design consistency and visual feedback.",
     live: "https://react-tailwind-task-tracker.vercel.app/",
     github: "https://github.com/cecilialetsau25/react-tailwind-task-tracker",
     image: trackerImg,
@@ -68,6 +71,22 @@ const projectsData = [
       Languages: ["JavaScript (ES6+)", "HTML", "CSS"],
       Frameworks: ["React"],
       Libraries: ["Tailwind CSS"],
+      IDEs: ["VS Code"],
+    },
+  },
+  {
+    title: "React Streaming App",
+    type: "Movie Streaming Platform",
+    role: "Frontend Developer",
+    description:
+      "A streaming platform built with React and Tailwind CSS, integrated with the TMDB API to showcase trending, popular, top-rated, and upcoming movies and TV shows. Features include dynamic rows, a hero banner, and smooth animations with Framer Motion.",
+    live: "https://react-streaming-app-delta.vercel.app/",
+    github: "https://github.com/cecilialetsau25/react-streaming-app",
+    image: streamingImg,
+    technologies: {
+      Languages: ["JavaScript (ES6+)", "HTML", "CSS"],
+      Frameworks: ["React"],
+      Libraries: ["Tailwind CSS", "Framer Motion"],
       IDEs: ["VS Code"],
     },
   },
@@ -154,27 +173,25 @@ export default function Projects() {
               <div className="mt-4 flex gap-4">
                 {project.live && (
                   <a
-  href={project.live}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded transition-colors duration-300"
->
-  Live
-</a>
-
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded transition-colors duration-300"
+                  >
+                    Live
+                  </a>
                 )}
-               {project.github && (
-  <a
-    href={project.github}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded flex items-center gap-2 transition-colors duration-300"
-  >
-    <FaGithub size={18} />
-    GitHub
-  </a>
-)}
-
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded flex items-center gap-2 transition-colors duration-300"
+                  >
+                    <FaGithub size={18} />
+                    GitHub
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}

@@ -5,7 +5,8 @@ import trackerImg from "../assets/tracker.png";
 import letsauImg from "../assets/letsau.png";
 import cleaneaseImg from "../assets/cleanease.png";
 import teketeImg from "../assets/tekete.png";
-import streamingImg from "../assets/streaming.png"; // 👈 Add your screenshot here
+import streamingImg from "../assets/streaming.png";
+import spaniplugImg from "../assets/spaniplug.png"; // 👈 Add your screenshot here
 import { FaGithub } from "react-icons/fa";
 
 const projectsData = [
@@ -122,6 +123,25 @@ const projectsData = [
       Libraries: ["jQuery", "Bootstrap"],
       Databases: ["MySQL"],
       IDEs: ["IntelliJ IDEA"],
+    },
+  },
+  {
+    title: "SpaniPlug",
+    type: "Web Application",
+    role: "Developer",
+    description:
+      "SpaniPlug is a web platform that connects consumers with service providers nearby. Users can browse available services, view provider details, and interact with listings in real-time. Built with React ,Supabase and Tailwind CSS, the app emphasizes responsive design, intuitive UI, and reusable components for an optimized user experience.",
+  
+    live: "https://spaniplug.vercel.app/",
+    github: "", // add GitHub repo if available
+    image: spaniplugImg,
+    technologies: {
+      Languages: ["JavaScript (ES6+)", "HTML", "CSS"],
+      Frameworks: ["React"], 
+      Database: ["Supabase"], 
+      Libraries: ["Tailwind CSS"],
+      IDEs: ["VS Code"],
+      Tools: ["Vercel"],
     },
   },
 ];

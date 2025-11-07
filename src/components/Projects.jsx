@@ -6,6 +6,7 @@ import letsauImg from "../assets/letsau.png";
 import cleaneaseImg from "../assets/cleanease.png";
 import teketeImg from "../assets/tekete.png";
 import streamingImg from "../assets/streaming.png";
+import mernImg from "../assets/mern.png";
 import spaniplugImg from "../assets/spaniplug.png"; // 👈 Add your screenshot here
 import { FaGithub } from "react-icons/fa";
 
@@ -125,6 +126,27 @@ const projectsData = [
       IDEs: ["IntelliJ IDEA"],
     },
   },
+  // ✅ MERN TypeScript To-Do project added
+  {
+    title: "MERN TypeScript To-Do",
+    type: "Task Management App",
+    role: "Full Stack Developer",
+    description:
+      "A full-stack To-Do application built with MongoDB, Express, React, Node.js, and TypeScript. Users can create, update, and delete tasks with real-time updates and a responsive design. The backend is hosted on Render, and the frontend is deployed on Vercel.",
+    live: "https://mern-typescript-todo-72oo.vercel.app/",
+    github: "https://github.com/cecilialetsau25/mern-typescript-todo",
+    backend: "https://mern-typescript-todo-6.onrender.com/",
+    image: mernImg, // Replace with a screenshot if you have one
+    technologies: {
+      Languages: ["TypeScript", "JavaScript (ES6+)", "HTML", "CSS"],
+      Frameworks: ["React", "Express"],
+      Libraries: ["Tailwind CSS", "Mongoose"],
+      Databases: ["MongoDB"],
+      IDEs: ["VS Code"],
+      Tools: ["Render", "Vercel"],
+    },
+  },
+
   {
     title: "SpaniPlug",
     type: "Web Application",

@@ -26,19 +26,7 @@ export default function Contact() {
             <a href="https://linkedin.com/in/magalane-letsau" target="_blank" rel="noreferrer" className="text-blue-500 ml-2">LinkedIn</a>
           </p>
 
-          <motion.a
-            href="/Resume.pdf"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-block mt-4 bg-green-500 text-white px-6 py-3 rounded hover:bg-green-600 transition"
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ type: "spring", stiffness: 300, damping: 15 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            View Resume
-          </motion.a>
+        
         </motion.div>
       </div>
     </section>

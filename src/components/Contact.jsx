@@ -23,7 +23,7 @@ export default function Contact() {
           <p>Phone: 072 484 1337</p>
           <p>
             <a href="https://github.com/cecilialetsau25" target="_blank" rel="noreferrer" className="text-blue-500">GitHub</a> | 
-            <a href="https://linkedin.com/in/magalane-letsau-80706b305" target="_blank" rel="noreferrer" className="text-blue-500 ml-2">LinkedIn</a>
+            <a href="https://linkedin.com/in/cecilia-letsau-80706b305" target="_blank" rel="noreferrer" className="text-blue-500 ml-2">LinkedIn</a>
           </p>
 
         

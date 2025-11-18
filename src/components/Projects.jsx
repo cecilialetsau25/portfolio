@@ -198,11 +198,14 @@ export default function Projects() {
   return (
     <section id="projects" className="py-16 bg-transparent">
       <div className="max-w-6xl mx-auto px-6">
-        <h3
-  className="text-20xl font-bold mb-10 font-bold italic tracking-widest text-lg bg-gradient-to-r from-sky-400 via-sky-300 to-sky-200 text-transparent bg-clip-text hover:from-cyan-300 hover:via-cyan-200 hover:to-cyan-100 transition-colors"
->
-  Projects
-</h3>
+       <motion.h3
+          className="text-5xl md:text-6xl font-extrabold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-sky-300 to-sky-200 drop-shadow-md"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          Projects
+        </motion.h3>
 
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

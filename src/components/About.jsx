@@ -79,16 +79,13 @@ export default function About() {
           </h2>
 
           <p className="text-lg md:text-xl mb-4 text-gray-100">
-            I recently completed my Computer Science diploma at Tshwane University of Technology 
-            and have gained hands-on experience as a Software Developer Intern at Moepi Publishing 
-            and Tshimologong Precinct. I enjoy collaborating with teams, mentoring peers, and 
-            building innovative solutions.
+            Hi, I'm Cecilia Letsau 👋. I hold a Computer Science Diploma from Tshwane University of Technology and gained hands-on experience as a Software Developer Intern at Moepi Publishing and Tshimologong Precinct.
           </p>
 
           <p className="text-lg md:text-xl mb-6 text-gray-100">
-            I'm passionate about technologies like Java (JEE, JPA, JDBC), PHP (Laravel, PHPUnit), 
-            React, Node.js, JavaScript (ES6+), HTML, CSS/Tailwind, SQL/MySQL, PostgreSQL, 
-            and MongoDB to develop modern, scalable applications.
+            I build modern, scalable applications using Java, PHP, React, Node.js, JavaScript, HTML, CSS/Tailwind, SQL/MySQL, PostgreSQL, and MongoDB. I enjoy mentoring peers, leading projects, and creating solutions that make an impact.
+
+Passionate about tech and innovation, I thrive on hackathons, hands-on projects, and exploring new tools to push my skills further.
           </p>
         </motion.div>
       </div>

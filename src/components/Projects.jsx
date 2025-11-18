@@ -20,6 +20,7 @@ const projectsData = [
       "A full-featured e-commerce application for selling braces. Includes product listings, shopping cart, checkout, and responsive design. Built with React, Tailwind CSS, and integrated with a backend for inventory management.",
     live: "https://ecommerce-app-tau-blue.vercel.app/",
     github: "", // Add GitHub repo if available
+    status: "In Progress", // ⚠️ Added status
     image: bracesImg,
     technologies: {
       Languages: ["JavaScript (ES6+)", "HTML", "CSS"],
@@ -38,6 +39,7 @@ const projectsData = [
       "A ticketing system that lets customers log, track, and manage service requests. Developed as part of a group.",
     live: "http://training.tekete.co.za",
     github: "",
+    status: "Completed",
     image: teketeImg,
     technologies: {
       Languages: ["PHP", "JavaScript (ES6+)", "HTML", "CSS"],
@@ -56,6 +58,7 @@ const projectsData = [
       "A fully responsive e-commerce frontend built with React and Tailwind CSS, designed to replicate the Melula homepage experience. Features include dynamic product listings, interactive UI components, and a mobile-friendly layout. The project emphasizes reusable components, clean state management, and accessibility best practices, providing a smooth and modern user experience.",
     live: "https://melula-assignment.vercel.app/",
     github: "https://github.com/cecilialetsau25/Melula_Assignment",
+    status: "in Progress",
     image: melulaImg,
     technologies: {
       Languages: ["JavaScript (ES6+)", "HTML", "CSS"],
@@ -72,6 +75,7 @@ const projectsData = [
       "A dynamic recipe search application developed with React that allows users to browse, search, and save recipes. The app includes dark mode, a responsive design, and client-side filtering to improve usability. Implemented modern React hooks for state and lifecycle management and designed components to be reusable and scalable. The project showcases clean UI/UX and practical use of APIs to fetch real-time recipe data.",
     live: "https://recipe-finder-eight-pi.vercel.app/",
     github: "https://github.com/cecilialetsau25/recipe_finder",
+    status: "Completed",
     image: recipeImg,
     technologies: {
       Languages: ["JavaScript (ES6+)", "HTML", "CSS"],
@@ -87,6 +91,7 @@ const projectsData = [
       "A productivity-focused task tracker built with React and Tailwind CSS. Users can create, update, and delete tasks, categorize them by status, and track progress in real-time. Features include smooth animations, responsive design, and intuitive UI interactions. The project emphasizes component-based architecture, state management with React hooks, and enhanced user experience through design consistency and visual feedback.",
     live: "https://react-tailwind-task-tracker.vercel.app/",
     github: "https://github.com/cecilialetsau25/react-tailwind-task-tracker",
+    status: "Completed",
     image: trackerImg,
     technologies: {
       Languages: ["JavaScript (ES6+)", "HTML", "CSS"],
@@ -103,6 +108,7 @@ const projectsData = [
       "A streaming platform built with React and Tailwind CSS, integrated with the TMDB API to showcase trending, popular, top-rated, and upcoming movies and TV shows. Features include dynamic rows, a hero banner, and smooth animations with Framer Motion.",
     live: "https://react-streaming-app-delta.vercel.app/",
     github: "https://github.com/cecilialetsau25/react-streaming-app",
+    status: "Completed",
     image: streamingImg,
     technologies: {
       Languages: ["JavaScript (ES6+)", "HTML", "CSS"],
@@ -119,6 +125,7 @@ const projectsData = [
       "A banking system project developed with Java and MySQL to handle accounts, transactions, and data management.",
     live: "https://letsau-bank-v2-ijc4.vercel.app/",
     github: "https://github.com/cecilialetsau25/LetsauBankV2",
+    status: "Completed",
     image: letsauImg,
     technologies: {
       Languages: ["Java", "HTML", "CSS"],
@@ -136,6 +143,7 @@ const projectsData = [
       "A laundry management system built with Laravel for handling customer orders, tracking, and notifications.",
     live: "",
     github: "https://github.com/cecilialetsau25/Cleanease_Laundry_System",
+    status: "In Progress",
     image: cleaneaseImg,
     technologies: {
       Languages: ["PHP", "JavaScript (ES6+)", "HTML", "CSS"],
@@ -154,6 +162,7 @@ const projectsData = [
     live: "https://mern-typescript-todo-72oo.vercel.app/",
     github: "https://github.com/cecilialetsau25/mern-typescript-todo",
     backend: "https://mern-typescript-todo-6.onrender.com/",
+    status: "Completed",
     image: mernImg,
     technologies: {
       Languages: ["TypeScript", "JavaScript (ES6+)", "HTML", "CSS"],
@@ -172,6 +181,7 @@ const projectsData = [
       "SpaniPlug is a web platform that connects consumers with service providers nearby. Users can browse available services, view provider details, and interact with listings in real-time. Built with React, Supabase, and Tailwind CSS, the app emphasizes responsive design, intuitive UI, and reusable components for an optimized user experience.",
     live: "https://spaniplug.vercel.app/",
     github: "",
+    status: "completed",
     image: spaniplugImg,
     technologies: {
       Languages: ["JavaScript (ES6+)", "HTML", "CSS"],
@@ -213,6 +223,20 @@ export default function Projects() {
                 alt={project.title}
                 className="rounded-lg mb-4 w-full object-cover"
               />
+
+              {/* ✅ Status Badge */}
+              <div className="mb-2">
+                <span
+                  className={`px-2 py-1 rounded-full text-xs font-semibold ${
+                    project.status === "Completed"
+                      ? "bg-green-500 text-white"
+                      : "bg-yellow-500 text-black"
+                  }`}
+                >
+                  {project.status}
+                </span>
+              </div>
+
               <h4 className="font-bold text-xl mb-2">{project.title}</h4>
               <p className="text-sm mb-2">{project.type}</p>
               <p className="text-sm mb-2 italic">Role: {project.role}</p>

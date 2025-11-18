@@ -7,10 +7,29 @@ import cleaneaseImg from "../assets/cleanease.png";
 import teketeImg from "../assets/tekete.png";
 import streamingImg from "../assets/streaming.png";
 import mernImg from "../assets/mern.png";
-import spaniplugImg from "../assets/spaniplug.png"; // 👈 Add your screenshot here
+import spaniplugImg from "../assets/spaniplug.png";
+import bracesImg from "../assets/braces.png"; // 👈 screenshot for Braces project
 import { FaGithub } from "react-icons/fa";
 
 const projectsData = [
+  {
+    title: "E-commerce Braces Shop",
+    type: "Online Store",
+    role: "Frontend & Backend Developer",
+    description:
+      "A full-featured e-commerce application for selling braces. Includes product listings, shopping cart, checkout, and responsive design. Built with React, Tailwind CSS, and integrated with a backend for inventory management.",
+    live: "https://ecommerce-app-tau-blue.vercel.app/",
+    github: "", // Add GitHub repo if available
+    image: bracesImg,
+    technologies: {
+      Languages: ["JavaScript (ES6+)", "HTML", "CSS"],
+      Frameworks: ["React"],
+      Libraries: ["Tailwind CSS"],
+      Databases: ["Firebase"], // Or whichever backend you used
+      IDEs: ["VS Code"],
+      Tools: ["Vercel"],
+    },
+  },
   {
     title: "Tekete Management System",
     type: "Customer Care System",
@@ -98,8 +117,8 @@ const projectsData = [
     role: "Solo Project",
     description:
       "A banking system project developed with Java and MySQL to handle accounts, transactions, and data management.",
-    live: "",
-    github: "https://github.com/cecilialetsau25/LetsauBank",
+    live: "https://letsau-bank-v2-ijc4.vercel.app/",
+    github: "https://github.com/cecilialetsau25/LetsauBankV2",
     image: letsauImg,
     technologies: {
       Languages: ["Java", "HTML", "CSS"],
@@ -126,7 +145,6 @@ const projectsData = [
       IDEs: ["IntelliJ IDEA"],
     },
   },
-  // ✅ MERN TypeScript To-Do project added
   {
     title: "MERN TypeScript To-Do",
     type: "Task Management App",
@@ -136,7 +154,7 @@ const projectsData = [
     live: "https://mern-typescript-todo-72oo.vercel.app/",
     github: "https://github.com/cecilialetsau25/mern-typescript-todo",
     backend: "https://mern-typescript-todo-6.onrender.com/",
-    image: mernImg, // Replace with a screenshot if you have one
+    image: mernImg,
     technologies: {
       Languages: ["TypeScript", "JavaScript (ES6+)", "HTML", "CSS"],
       Frameworks: ["React", "Express"],
@@ -146,21 +164,19 @@ const projectsData = [
       Tools: ["Render", "Vercel"],
     },
   },
-
   {
     title: "SpaniPlug",
     type: "Web Application",
     role: "Developer",
     description:
-      "SpaniPlug is a web platform that connects consumers with service providers nearby. Users can browse available services, view provider details, and interact with listings in real-time. Built with React ,Supabase and Tailwind CSS, the app emphasizes responsive design, intuitive UI, and reusable components for an optimized user experience.",
-  
+      "SpaniPlug is a web platform that connects consumers with service providers nearby. Users can browse available services, view provider details, and interact with listings in real-time. Built with React, Supabase, and Tailwind CSS, the app emphasizes responsive design, intuitive UI, and reusable components for an optimized user experience.",
     live: "https://spaniplug.vercel.app/",
-    github: "", // add GitHub repo if available
+    github: "",
     image: spaniplugImg,
     technologies: {
       Languages: ["JavaScript (ES6+)", "HTML", "CSS"],
-      Frameworks: ["React"], 
-      Database: ["Supabase"], 
+      Frameworks: ["React"],
+      Database: ["Supabase"],
       Libraries: ["Tailwind CSS"],
       IDEs: ["VS Code"],
       Tools: ["Vercel"],
@@ -168,7 +184,6 @@ const projectsData = [
   },
 ];
 
-// Gradient colors array
 const colors = [
   "from-purple-500 to-pink-500",
   "from-green-400 to-teal-400",

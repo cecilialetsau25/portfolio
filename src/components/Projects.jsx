@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
+import { FaGithub } from "react-icons/fa";
+
 import melulaImg from "../assets/melula.png";
 import recipeImg from "../assets/recipe.png";
 import trackerImg from "../assets/tracker.png";
 import letsauImg from "../assets/letsau.png";
-import cleaneaseImg from "../assets/cleanease.png";
 import teketeImg from "../assets/tekete.png";
 import streamingImg from "../assets/streaming.png";
 import mernImg from "../assets/mern.png";
 import spaniplugImg from "../assets/spaniplug.png";
-import bracesImg from "../assets/braces.png"; // 👈 screenshot for Braces project
-import { FaGithub } from "react-icons/fa";
+import bracesImg from "../assets/braces.png";
 
 const projectsData = [
   {
@@ -19,14 +19,14 @@ const projectsData = [
     description:
       "A full-featured e-commerce application for selling braces. Includes product listings, shopping cart, checkout, and responsive design. Built with React, Tailwind CSS, and integrated with a backend for inventory management.",
     live: "https://ecommerce-app-tau-blue.vercel.app/",
-    github: "", // Add GitHub repo if available
-    status: "In Progress", // ⚠️ Added status
+    github: "",
+    status: "In Progress",
     image: bracesImg,
     technologies: {
       Languages: ["JavaScript (ES6+)", "HTML", "CSS"],
       Frameworks: ["React"],
       Libraries: ["Tailwind CSS"],
-      Databases: ["Firebase"], // Or whichever backend you used
+      Databases: ["Firebase"],
       IDEs: ["VS Code"],
       Tools: ["Vercel"],
     },
@@ -144,7 +144,7 @@ const projectsData = [
     live: "",
     github: "https://github.com/cecilialetsau25/Cleanease_Laundry_System",
     status: "In Progress",
-    image: cleaneaseImg,
+    image: letsauImg,
     technologies: {
       Languages: ["PHP", "JavaScript (ES6+)", "HTML", "CSS"],
       Frameworks: ["Laravel"],
@@ -194,70 +194,71 @@ const projectsData = [
   },
 ];
 
-const colors = [
-  "from-purple-500 to-pink-500",
-  "from-green-400 to-teal-400",
-  "from-yellow-400 to-orange-400",
-  "from-blue-400 to-indigo-500",
-  "from-pink-400 to-red-400",
-  "from-purple-300 to-purple-600",
-];
-
 export default function Projects() {
   return (
-    <section id="projects" className="py-16 bg-gray-900">
+    <section id="projects" className="py-16 bg-transparent">
       <div className="max-w-6xl mx-auto px-6">
-        <h3 className="text-3xl font-bold mb-10 text-white">Projects</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <h3
+  className="text-20xl font-bold mb-10 font-bold italic tracking-widest text-lg bg-gradient-to-r from-sky-400 via-sky-300 to-sky-200 text-transparent bg-clip-text hover:from-cyan-300 hover:via-cyan-200 hover:to-cyan-100 transition-colors"
+>
+  Projects
+</h3>
+
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projectsData.map((project, index) => (
             <motion.div
               key={index}
-              className={`p-6 shadow-lg rounded-xl cursor-pointer flex flex-col justify-start items-start bg-gradient-to-r ${colors[index % colors.length]} text-white`}
-              whileHover={{ scale: 1.05 }}
-              initial={{ opacity: 0, y: 20 }}
+              className="bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl p-6 shadow-lg cursor-pointer flex flex-col justify-start items-start text-white transition-transform duration-200"
+              whileHover={{ scale: 1.02 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
+              transition={{ duration: 0.35, delay: index * 0.06 }}
             >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="rounded-lg mb-4 w-full object-cover"
-              />
+              <div className="w-full rounded-lg overflow-hidden mb-4">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full object-cover h-40"
+                />
+              </div>
 
-              {/* ✅ Status Badge */}
-              <div className="mb-2">
+              <div className="mb-3 w-full flex justify-between items-center">
                 <span
-                  className={`px-2 py-1 rounded-full text-xs font-semibold ${
-                    project.status === "Completed"
-                      ? "bg-green-500 text-white"
-                      : "bg-yellow-500 text-black"
+                  className={`px-2 py-1 rounded-full text-[11px] font-semibold ${
+                    project.status && project.status.toLowerCase().includes("complete")
+                      ? "bg-green-500/90 text-white"
+                      : "bg-yellow-400/90 text-black"
                   }`}
                 >
                   {project.status}
                 </span>
               </div>
 
-              <h4 className="font-bold text-xl mb-2">{project.title}</h4>
-              <p className="text-sm mb-2">{project.type}</p>
-              <p className="text-sm mb-2 italic">Role: {project.role}</p>
-              <p className="text-sm mb-4">{project.description}</p>
-              <div className="flex flex-wrap gap-2">
+              <h4 className="font-semibold text-lg mb-1 text-white">{project.title}</h4>
+              <p className="text-xs mb-1 text-slate-200">{project.type}</p>
+              <p className="text-xs mb-2 italic text-slate-300">Role: {project.role}</p>
+
+              <p className="text-sm mb-4 text-slate-200 line-clamp-4">{project.description}</p>
+
+              <div className="flex flex-wrap gap-2 mb-4">
                 {Object.values(project.technologies).flat().map((tech, i) => (
                   <span
                     key={i}
-                    className="bg-white/20 px-2 py-1 rounded-full text-xs"
+                    className="bg-white/6 px-2 py-1 rounded-full text-[11px] text-white"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
-              <div className="mt-4 flex gap-4">
+
+              <div className="mt-auto flex gap-3 w-full">
                 {project.live && (
                   <a
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded transition-colors duration-300"
+                    className="inline-block bg-cyan-400 hover:bg-cyan-500 text-black font-semibold py-2 px-3 rounded-lg transition-colors duration-300"
                   >
                     Live
                   </a>
@@ -267,9 +268,9 @@ export default function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded flex items-center gap-2 transition-colors duration-300"
+                    className="inline-flex items-center gap-2 bg-white/6 border border-white/8 text-white font-semibold py-2 px-3 rounded-lg text-sm hover:bg-white/10 transition-colors duration-300"
                   >
-                    <FaGithub size={18} />
+                    <FaGithub size={16} />
                     GitHub
                   </a>
                 )}

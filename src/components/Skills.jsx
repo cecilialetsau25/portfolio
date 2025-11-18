@@ -1,16 +1,63 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
 
-const skillsData = [
-  { name: "Java (JEE, JPA, JDBC, JPQL, PLSQL)", icon: "https://img.icons8.com/color/48/java-coffee-cup-logo.png" },
-  { name: "PHP (Laravel, PHPUnit)", icon: "https://img.icons8.com/color/48/php.png" },
-  { name: "React (Frontend Development)", icon: "https://img.icons8.com/color/48/react-native.png" },
-  { name: "JavaScript (ES6+, jQuery)", icon: "https://img.icons8.com/color/48/javascript.png" },
-  { name: "HTML", icon: "https://img.icons8.com/color/48/html-5.png" },
-  { name: "CSS / Tailwind CSS", icon: "https://img.icons8.com/color/48/css3.png" },
-  { name: "SQL / MySQL", icon: "https://img.icons8.com/color/48/mysql-logo.png" },
-  { name: "GitHub", icon: "https://img.icons8.com/material-outlined/48/github.png" },
-  { name: "NetBeans / VS Code", icon: "https://img.icons8.com/color/48/visual-studio-code-2019.png" },
-  { name: "Kotlin", icon: "https://img.icons8.com/color/48/kotlin.png" },
+const skillsCategories = [
+  {
+    title: "Programming Languages",
+    skills: [
+      { name: "Java", icon: "https://img.icons8.com/color/48/java-coffee-cup-logo.png" },
+      { name: "PHP", icon: "https://img.icons8.com/color/48/php.png" },
+      { name: "JavaScript (ES6+)", icon: "https://img.icons8.com/color/48/javascript.png" },
+      { name: "TypeScript", icon: "https://img.icons8.com/color/48/typescript.png" },
+      { name: "Kotlin", icon: "https://img.icons8.com/color/48/kotlin.png" },
+      { name: "HTML", icon: "https://img.icons8.com/color/48/html-5.png" },
+      { name: "CSS", icon: "https://img.icons8.com/color/48/css3.png" },
+      { name: "SQL", icon: "https://img.icons8.com/color/48/mysql-logo.png" },
+    ],
+  },
+  {
+    title: "Frameworks / Libraries",
+    skills: [
+      { name: "React", icon: "https://img.icons8.com/color/48/react-native.png" },
+      { name: "Laravel", icon: "https://img.icons8.com/color/48/laravel.png" },
+      { name: "Tailwind CSS", icon: "https://img.icons8.com/color/48/css3.png" },
+      { name: "Bootstrap", icon: "https://img.icons8.com/color/48/bootstrap.png" },
+      { name: "jQuery", icon: "https://img.icons8.com/color/48/jquery.png" },
+      { name: "Express.js", icon: "https://img.icons8.com/color/48/express-js.png" },
+      { name: "Mongoose", icon: "https://img.icons8.com/color/48/mongodb.png" },
+    ],
+  },
+  {
+    title: "Databases",
+    skills: [
+      { name: "MySQL", icon: "https://img.icons8.com/color/48/mysql-logo.png" },
+      { name: "MongoDB", icon: "https://img.icons8.com/color/48/mongodb.png" },
+      { name: "Firebase", icon: "https://img.icons8.com/fluency/48/database.png" },
+      { name: "Supabase", icon: "https://img.icons8.com/fluency/48/database.png" },
+      { name: "PostgreSQL", icon: "https://img.icons8.com/color/48/postgreesql.png" },
+    ],
+  },
+  {
+    title: "Tools & IDEs",
+    skills: [
+      { name: "Git/GitHub", icon: "https://img.icons8.com/material-outlined/48/github.png" },
+      { name: "VS Code", icon: "https://img.icons8.com/color/48/visual-studio-code-2019.png" },
+      { name: "NetBeans", icon: "https://img.icons8.com/color/48/netbeans.png" },
+      { name: "PhpStorm", icon: "https://img.icons8.com/color/48/phpstorm.png" },
+      { name: "IntelliJ IDEA", icon: "https://img.icons8.com/color/48/intellij-idea.png" },
+      { name: "Vercel", icon: "https://img.icons8.com/color/48/vercel.png" },
+      { name: "Render", icon: "https://img.icons8.com/color/48/render.png" },
+    ],
+  },
+  {
+    title: "Other Skills",
+    skills: [
+      { name: "Frontend & Backend Integration", icon: "https://img.icons8.com/color/48/code.png" },
+      { name: "Responsive Design", icon: "https://img.icons8.com/color/48/responsive.png" },
+      { name: "API Consumption", icon: "https://img.icons8.com/color/48/api.png" },
+      { name: "Project Management", icon: "https://img.icons8.com/color/48/project.png" },
+      { name: "Mentoring & Team Collaboration", icon: "https://img.icons8.com/color/48/team.png" },
+    ],
+  },
 ];
 
 export default function Skills() {
@@ -26,11 +73,16 @@ export default function Skills() {
           Skills
         </motion.h3>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-          {skillsData.map((skill, index) => (
-            <TiltCard key={index} skill={skill} />
-          ))}
-        </div>
+        {skillsCategories.map((category, idx) => (
+          <div key={idx} className="mb-12">
+            <h4 className="text-2xl font-semibold mb-6 text-white">{category.title}</h4>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {category.skills.map((skill, index) => (
+                <TiltCard key={index} skill={skill} />
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

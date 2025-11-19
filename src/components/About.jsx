@@ -79,7 +79,7 @@ export default function About() {
           </h2>
 
           <p className="text-lg md:text-xl mb-4 text-gray-100">
-            Hi, I'm Cecilia Letsau 👋. I hold a Computer Science Diploma from Tshwane University of Technology and gained hands-on experience as a Software Developer Intern at Moepi Publishing and Tshimologong Precinct.
+            I hold a Computer Science Diploma from Tshwane University of Technology and gained hands-on experience as a Software Developer Intern at Moepi Publishing and Tshimologong Precinct.
           </p>
 
           <p className="text-lg md:text-xl mb-6 text-gray-100">

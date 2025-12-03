@@ -12,6 +12,7 @@ import mernImg from "../assets/mern.png";
 import spaniplugImg from "../assets/spaniplug.png";
 import bracesImg from "../assets/braces.png";
 import port6Img from "../assets/port6.png"; // Blazor App image
+import cleaneaseImg from "../assets/cleanease.png";
 
 const categories = ["All", "E-commerce", "Client", "Personal", "Full Stack", "Frontend"];
 
@@ -191,28 +192,44 @@ const projectsData = [
       IDEs: ["IntelliJ IDEA"],
     },
   },
-  {
-    title: "Cleanease Laundry System",
-    type: "Laundry Management System",
-    role: "Solo Project",
-    description:
-      "A laundry management system built with Laravel for handling customer orders, tracking, and notifications.",
-    features: ["Customer order management", "Tracking and notifications", "Admin dashboard"],
-    challenge:
-      "Handled database relations efficiently and created reusable Laravel components.",
-    live: "",
-    github: "https://github.com/cecilialetsau25/Cleanease_Laundry_System",
-    status: "In Progress",
-    image: letsauImg,
-    category: "Client",
-    technologies: {
-      Languages: ["PHP", "JavaScript (ES6+)", "HTML", "CSS"],
-      Frameworks: ["Laravel"],
-      Libraries: ["jQuery", "Bootstrap"],
-      Databases: ["MySQL"],
-      IDEs: ["IntelliJ IDEA"],
-    },
-  },
+ {
+  title: "Cleanease Laundry System",
+  type: "Laundry Management System",
+  role: "Admin email**admin@sytem.com** password**Admin@123**--user register any",
+  description:
+    "A laundry management system built with Laravel and React that handles customer orders, real-time tracking, and automated notifications.",
+
+  features: [
+    "Customer order creation & tracking",
+    "Real-time order updates and notifications",
+    "Admin dashboard with analytics",
+    "Status categories: Pending, In Progress, Completed, Cancelled",
+    "Secure authentication for both users and admins"
+  ],
+
+  challenge:
+    "Built a full end-to-end system including authentication, CRUD operations, Supabase analytics for total orders, pending, completed, and cancelled counts, plus real-time admin and customer dashboards.",
+
+  live: "https://cleanease-v2.vercel.app/",
+  github: "https://github.com/cecilialetsau25/Cleanease_Laundry_System",
+
+  // 🔥 Added admin login + demo instructions
+ 
+
+  status: "In Progress",
+  image: cleaneaseImg,
+  category: "Client",
+
+  technologies: {
+    Languages: ["PHP", "JavaScript (ES6+)", "HTML", "CSS"],
+    Frameworks: ["Laravel", "React"],
+    Libraries: ["Axios", "Tailwind CSS", "Bootstrap"],
+    Databases: ["MySQL", "Supabase"],
+    IDEs: ["VS Code", "IntelliJ IDEA"],
+    Tools: ["Vercel", "PHPUnit"]
+  }
+},
+
   {
     title: "MERN TypeScript To-Do",
     type: "Task Management App",

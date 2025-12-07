@@ -1,29 +1,35 @@
+
+
 import { motion, useMotionValue, useTransform } from "framer-motion";
 
 const skillsCategories = [
-  {
-    title: "Programming Languages",
-    skills: [
-      { name: "Java", icon: "https://img.icons8.com/color/48/java-coffee-cup-logo.png" },
-      { name: "PHP", icon: "https://img.icons8.com/color/48/php.png" },
-      { name: "JavaScript (ES6+)", icon: "https://img.icons8.com/color/48/javascript.png" },
-      { name: "TypeScript", icon: "https://img.icons8.com/color/48/typescript.png" },
-      { name: "Kotlin", icon: "https://img.icons8.com/color/48/kotlin.png" },
-      { name: "HTML", icon: "https://img.icons8.com/color/48/html-5.png" },
-      { name: "CSS", icon: "https://img.icons8.com/color/48/css3.png" },
-      { name: "SQL", icon: "https://img.icons8.com/color/48/mysql-logo.png" },
-    ],
-  },
-  {
+ {
+  title: "Programming Languages",
+  skills: [
+    { name: "Java", icon: "https://img.icons8.com/color/48/java-coffee-cup-logo.png" },
+    { name: "C#", icon: "https://img.icons8.com/color/48/c-sharp-logo.png" },
+    { name: "PHP", icon: "https://img.icons8.com/color/48/php.png" },
+    { name: "JavaScript (ES6+)", icon: "https://img.icons8.com/color/48/javascript.png" },
+    { name: "TypeScript", icon: "https://img.icons8.com/color/48/typescript.png" },
+    { name: "Kotlin", icon: "https://img.icons8.com/color/48/kotlin.png" },
+    { name: "HTML", icon: "https://img.icons8.com/color/48/html-5.png" },
+    { name: "CSS", icon: "https://img.icons8.com/color/48/css3.png" },
+    { name: "SQL", icon: "https://img.icons8.com/color/48/mysql-logo.png" },
+  ],
+},
+
+   {
     title: "Frameworks / Libraries",
     skills: [
       { name: "React", icon: "https://img.icons8.com/color/48/react-native.png" },
-      { name: "Laravel", icon: "https://img.icons8.com/color/48/laravel.png" },
+      { name: "Angular (Standalone Components)", icon: "https://angular.io/assets/images/logos/angular/angular.png" },
+      { name: "Laravel", icon: "https://img.icons8.com/color/48/code.png"  },
       { name: "Tailwind CSS", icon: "https://img.icons8.com/color/48/css3.png" },
       { name: "Bootstrap", icon: "https://img.icons8.com/color/48/bootstrap.png" },
-      { name: "jQuery", icon: "https://img.icons8.com/color/48/jquery.png" },
+      { name: "jQuery", icon: "https://img.icons8.com/color/48/code.png" },
       { name: "Express.js", icon: "https://img.icons8.com/color/48/express-js.png" },
       { name: "Mongoose", icon: "https://img.icons8.com/color/48/mongodb.png" },
+      
     ],
   },
   {
@@ -36,28 +42,32 @@ const skillsCategories = [
       { name: "PostgreSQL", icon: "https://img.icons8.com/color/48/postgreesql.png" },
     ],
   },
-  {
-    title: "Tools & IDEs",
-    skills: [
-      { name: "Git/GitHub", icon: "https://img.icons8.com/material-outlined/48/github.png" },
-      { name: "VS Code", icon: "https://img.icons8.com/color/48/visual-studio-code-2019.png" },
-      { name: "NetBeans", icon: "https://img.icons8.com/color/48/netbeans.png" },
-      { name: "PhpStorm", icon: "https://img.icons8.com/color/48/phpstorm.png" },
-      { name: "IntelliJ IDEA", icon: "https://img.icons8.com/color/48/intellij-idea.png" },
-      { name: "Vercel", icon: "https://img.icons8.com/color/48/vercel.png" },
-      { name: "Render", icon: "https://img.icons8.com/color/48/render.png" },
-    ],
-  },
-  {
-    title: "Other Skills",
-    skills: [
-      { name: "Frontend & Backend Integration", icon: "https://img.icons8.com/color/48/code.png" },
-      { name: "Responsive Design", icon: "https://img.icons8.com/color/48/responsive.png" },
-      { name: "API Consumption", icon: "https://img.icons8.com/color/48/api.png" },
-      { name: "Project Management", icon: "https://img.icons8.com/color/48/project.png" },
-      { name: "Mentoring & Team Collaboration", icon: "https://img.icons8.com/color/48/team.png" },
-    ],
-  },
+ {
+  title: "Tools & IDEs",
+  skills: [
+    { name: "Git/GitHub", icon: "https://img.icons8.com/material-outlined/48/github.png" },
+    { name: "VS Code", icon: "https://img.icons8.com/color/48/visual-studio-code-2019.png" },
+    { name: "NetBeans", icon: "https://img.icons8.com/color/48/apache-netbeans.png" },
+    { name: "PhpStorm", icon: "https://img.icons8.com/color/48/code.png"  },
+    { name: "IntelliJ IDEA", icon: "https://img.icons8.com/color/48/intellij-idea.png" },
+    { name: "Vercel", icon: "https://img.icons8.com/color/48/vercel.png" },
+    // Use a more generic hosting/server icon for Render (if Render logo link fails)
+    
+  ],
+}
+,
+
+
+ {
+  title: "Other Skills",
+  skills: [
+    { name: "Frontend & Backend Integration", icon: "https://img.icons8.com/color/48/code.png" },
+    { name: "API Consumption", icon: "https://img.icons8.com/color/48/api.png" },
+    { name: "Project Management", icon: "https://img.icons8.com/color/48/project.png" },
+    { name: "Mentoring & Team Collaboration", icon: "https://img.icons8.com/color/48/teamwork.png" },
+  ],
+},
+
 ];
 
 export default function Skills() {

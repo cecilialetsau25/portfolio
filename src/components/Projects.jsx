@@ -13,6 +13,7 @@ import spaniplugImg from "../assets/spaniplug.png";
 import bracesImg from "../assets/braces.png";
 import port6Img from "../assets/port6.png"; // Blazor App image
 import cleaneaseImg from "../assets/cleanease.png";
+import quotesImg from "../assets/random.png";
 
 const categories = ["All", "E-commerce", "Client", "Personal", "Full Stack", "Frontend"];
 
@@ -135,7 +136,7 @@ const projectsData = [
       "Implemented smooth animations and state management for real-time updates.",
     live: "https://react-tailwind-task-tracker.vercel.app/",
     github: "https://github.com/cecilialetsau25/react-tailwind-task-tracker",
-    status: "Completed",
+    status:"In Progress",
     image: trackerImg,
     category: "Personal",
     technologies: {
@@ -277,6 +278,31 @@ const projectsData = [
       Tools: ["Vercel"],
     },
   },
+  {
+  title: "Angular Quotes App",
+  type: "Motivational Quotes App",
+  role: "Frontend Developer",
+  description:
+    "A standalone Angular application that displays random motivational quotes with a clean and responsive UI.",
+  features: ["Show random quotes", "Copy quote button", "Light/Dark mode", "Responsive design"],
+  challenge:
+    "Built as a standalone Angular app without NgModule, with routing and fully functional components. Deployed on GitHub and Vercel.",
+  live: "https://quotes-app-ten-kappa.vercel.app/" ,
+  github: "https://github.com/cecilialetsau25/quotes-app",
+  backend: "N/A",
+  status: "Completed",
+  image: quotesImg,
+  category: "Frontend",
+  technologies: {
+    Languages: ["TypeScript", "JavaScript", "HTML", "CSS"],
+    Frameworks: ["Angular (Standalone Components)"],
+    Libraries: ["None"],
+    Databases: ["N/A"],
+    IDEs: ["VS Code"],
+    Tools: ["GitHub", "Vercel"],
+  },
+},
+
   {
     title: "Blazor Portfolio App",
     type: "Interactive C# Web App",

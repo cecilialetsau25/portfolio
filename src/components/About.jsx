@@ -83,7 +83,7 @@ export default function About() {
           </p>
 
           <p className="text-lg md:text-xl mb-6 text-gray-100">
-            I build modern, scalable applications using Java, PHP, React, Node.js, JavaScript, HTML, CSS/Tailwind, SQL/MySQL, PostgreSQL, and MongoDB. I enjoy mentoring peers, leading projects, and creating solutions that make an impact.
+            I build modern, scalable applications using Java,C#, Angular, ASP.NET , PHP, React, Node.js, JavaScript, HTML, CSS/Tailwind, SQL/MySQL, PostgreSQL, and MongoDB. I enjoy mentoring peers, leading projects, and creating solutions that make an impact.
 
 Passionate about tech and innovation, I thrive on hackathons, hands-on projects, and exploring new tools to push my skills further.
           </p>

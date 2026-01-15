@@ -4,7 +4,7 @@ import { FaGithub } from "react-icons/fa";
 
 import melulaImg from "../assets/melula.png";
 import recipeImg from "../assets/recipe.png";
-import trackerImg from "../assets/tracker.png";
+import gradtrackImg from "../assets/gradtrackimg.png";
 import letsauImg from "../assets/letsau.png";
 import teketeImg from "../assets/tekete.png";
 import streamingImg from "../assets/streaming.png";
@@ -121,31 +121,44 @@ const projectsData = [
       IDEs: ["VS Code"],
     },
   },
-  {
-    title: "React Tailwind Task Tracker",
-    type: "Task Management App",
+
+ {
+    title: "GradTrack",
+    type: "Internship Progress Tracker",
     role: "Frontend Developer",
     description:
-      "A productivity-focused task tracker built with React and Tailwind CSS.",
+      "A professional dashboard-style app to track learning goals for internships. Built with React and Tailwind CSS, featuring a pink-themed interface, mentor review badges, and a modern card-based layout.",
     features: [
-      "Create, update, delete tasks",
-      "Categorize tasks by status",
-      "Track progress in real-time",
+      "Add, update, and delete learning goals",
+      "Track target completion dates",
+      "Mark goals as 'Needs Mentor Review'",
+      "Responsive and dashboard-style layout with hover effects",
     ],
     challenge:
-      "Implemented smooth animations and state management for real-time updates.",
+      "Redesigned the classic task tracker into a professional pink-themed dashboard, creating custom card layouts and responsive components using React and Tailwind CSS.",
     live: "https://react-tailwind-task-tracker.vercel.app/",
     github: "https://github.com/cecilialetsau25/react-tailwind-task-tracker",
-    status:"In Progress",
-    image: trackerImg,
+    status: "In Progress",
+    image: gradtrackImg,
     category: "Personal",
     technologies: {
       Languages: ["JavaScript (ES6+)", "HTML", "CSS"],
       Frameworks: ["React"],
-      Libraries: ["Tailwind CSS"],
+      Libraries: ["Tailwind CSS", "React Icons", "React Router DOM"],
       IDEs: ["VS Code"],
     },
+    notes: `⚠️ Important: The app requires the backend to be running separately. 
+To run the backend (JSON server or Node API), open a separate terminal in the backend folder and run:
+
+# Install dependencies (if not already)
+npm install
+
+# Start the backend server
+npm run server
+
+The frontend (React app) will then fetch data from http://localhost:5000/tasks and work properly.`,
   },
+
   {
     title: "React Streaming App",
     type: "Movie Streaming Platform",

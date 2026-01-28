@@ -2,7 +2,9 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { FaGithub, FaArrowLeft, FaExternalLinkAlt } from "react-icons/fa";
-import { projectsData } from "./projectData";
+ import { projectsData } from "./ProjectData";
+ //import { projectsData } from "./projectData";
+
 
 // ✅ IMPORT YOUR EXISTING COMPONENTS
 import About from "./About";

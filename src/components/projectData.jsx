@@ -1,8 +1,8 @@
 // projectData.js
 
-import melulaImg from "../assets/melula.png";
+
 import recipeImg from "../assets/recipe.png";
-import gradtrackImg from "../assets/gradtrackimg.png";
+import gradtrackImg from "../assets/gradtracking.png";
 import letsauImg from "../assets/letsau.png";
 import teketeImg from "../assets/tekete.png";
 import streamingImg from "../assets/streaming.png";

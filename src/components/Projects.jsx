@@ -1,364 +1,33 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { FaGithub } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
 
-import melulaImg from "../assets/melula.png";
-import recipeImg from "../assets/recipe.png";
-import gradtrackImg from "../assets/gradtrackimg.png";
-import letsauImg from "../assets/letsau.png";
-import teketeImg from "../assets/tekete.png";
-import streamingImg from "../assets/streaming.png";
-import mernImg from "../assets/mern.png";
-import spaniplugImg from "../assets/spaniplug.png";
-import bracesImg from "../assets/braces.png";
-import port6Img from "../assets/port6.png"; // Blazor App image
-import cleaneaseImg from "../assets/cleanease.png";
-import quotesImg from "../assets/random.png";
-
-const categories = ["All", "E-commerce", "Client", "Personal", "Full Stack", "Frontend"];
-
-const projectsData = [
-  {
-    title: "E-commerce Braces Shop",
-    type: "Online Store",
-    role: "Frontend & Backend Developer",
-    description:
-      "A full-featured e-commerce application for selling braces. Includes product listings, shopping cart, checkout, and responsive design.",
-    features: [
-      "Dynamic product listing and search",
-      "Shopping cart with checkout",
-      "Responsive design for mobile and desktop",
-    ],
-    challenge:
-      "Integrated backend inventory management and optimized UI for smooth performance.",
-    live: "https://ecommerce-app-tau-blue.vercel.app/",
-    github: "",
-    status: "In Progress",
-    image: bracesImg,
-    category: "E-commerce",
-    technologies: {
-      Languages: ["JavaScript (ES6+)", "HTML", "CSS"],
-      Frameworks: ["React"],
-      Libraries: ["Tailwind CSS"],
-      Databases: ["Firebase"],
-      IDEs: ["VS Code"],
-      Tools: ["Vercel"],
-    },
-  },
-  {
-    title: "Tekete Management System",
-    type: "Customer Care System",
-    role: "Junior Software Developer",
-    description:
-      "A ticketing system that lets customers log, track, and manage service requests. Developed as part of a group.",
-    features: [
-      "Ticket logging and tracking",
-      "Admin dashboard for managing tickets",
-      "Email notifications for updates",
-    ],
-    challenge:
-      "Designed the system to handle multiple simultaneous users efficiently.",
-    live: "http://training.tekete.co.za",
-    github: "",
-    status: "Completed",
-    image: teketeImg,
-    category: "Client",
-    technologies: {
-      Languages: ["PHP", "JavaScript (ES6+)", "HTML", "CSS"],
-      Frameworks: ["Laravel"],
-      Libraries: ["jQuery"],
-      Databases: ["MySQL"],
-      IDEs: ["VS Code", "PhpStorm"],
-      Tools: ["PHPUnit"],
-    },
-  },
-  {
-    title: "Melula Assignment",
-    type: "E-commerce Frontend",
-    role: "Frontend Developer",
-    description:
-      "A fully responsive e-commerce frontend built with React and Tailwind CSS, replicating the Melula homepage.",
-    features: [
-      "Dynamic product listings",
-      "Responsive mobile-first design",
-      "Interactive UI components",
-    ],
-    challenge:
-      "Maintained pixel-perfect design and reusable components across pages.",
-    live: "https://melula-assignment.vercel.app/",
-    github: "https://github.com/cecilialetsau25/Melula_Assignment",
-    status: "In Progress",
-    image: melulaImg,
-    category: "E-commerce",
-    technologies: {
-      Languages: ["JavaScript (ES6+)", "HTML", "CSS"],
-      Frameworks: ["React"],
-      Libraries: ["Tailwind CSS"],
-      IDEs: ["VS Code"],
-    },
-  },
-  {
-    title: "Recipe Finder",
-    type: "Recipe Search App",
-    role: "React Developer",
-    description:
-      "A dynamic recipe search application developed with React allowing users to browse, search, and save recipes.",
-    features: [
-      "Dark mode support",
-      "Responsive design",
-      "Client-side filtering of recipes",
-    ],
-    challenge:
-      "Integrated API for real-time recipe data and implemented reusable components.",
-    live: "https://recipe-finder-eight-pi.vercel.app/",
-    github: "https://github.com/cecilialetsau25/recipe_finder",
-    status: "Completed",
-    image: recipeImg,
-    category: "Personal",
-    technologies: {
-      Languages: ["JavaScript (ES6+)", "HTML", "CSS"],
-      Frameworks: ["React"],
-      IDEs: ["VS Code"],
-    },
-  },
-
- {
-    title: "GradTrack",
-    type: "Internship Progress Tracker",
-    role: "Frontend Developer",
-    description:
-      "A professional dashboard-style app to track learning goals for internships. Built with React and Tailwind CSS, featuring a pink-themed interface, mentor review badges, and a modern card-based layout.",
-    features: [
-      "Add, update, and delete learning goals",
-      "Track target completion dates",
-      "Mark goals as 'Needs Mentor Review'",
-      "Responsive and dashboard-style layout with hover effects",
-    ],
-    challenge:
-      "Redesigned the classic task tracker into a professional pink-themed dashboard, creating custom card layouts and responsive components using React and Tailwind CSS.",
-    live: "https://react-tailwind-task-tracker.vercel.app/",
-    github: "https://github.com/cecilialetsau25/react-tailwind-task-tracker",
-    status: "In Progress",
-    image: gradtrackImg,
-    category: "Personal",
-    technologies: {
-      Languages: ["JavaScript (ES6+)", "HTML", "CSS"],
-      Frameworks: ["React"],
-      Libraries: ["Tailwind CSS", "React Icons", "React Router DOM"],
-      IDEs: ["VS Code"],
-    },
-    notes: `⚠️ Important: The app requires the backend to be running separately. 
-To run the backend (JSON server or Node API), open a separate terminal in the backend folder and run:
-
-# Install dependencies (if not already)
-npm install
-
-# Start the backend server
-npm run server
-
-The frontend (React app) will then fetch data from http://localhost:5000/tasks and work properly.`,
-  },
-
-  {
-    title: "React Streaming App",
-    type: "Movie Streaming Platform",
-    role: "Frontend Developer",
-    description:
-      "A streaming platform built with React and Tailwind CSS, integrated with TMDB API.",
-    features: [
-      "Trending, popular, top-rated, upcoming movies",
-      "Dynamic rows and hero banner",
-      "Smooth animations with Framer Motion",
-    ],
-    challenge:
-      "Implemented client-side API integration with dynamic rendering and animations.",
-    live: "https://react-streaming-app-delta.vercel.app/",
-    github: "https://github.com/cecilialetsau25/react-streaming-app",
-    status: "Completed",
-    image: streamingImg,
-    category: "Personal",
-    technologies: {
-      Languages: ["JavaScript (ES6+)", "HTML", "CSS"],
-      Frameworks: ["React"],
-      Libraries: ["Tailwind CSS", "Framer Motion"],
-      IDEs: ["VS Code"],
-    },
-  },
-  {
-    title: "Letsau’s Bank",
-    type: "Banking System",
-    role: "Solo Project",
-    description:
-      "A banking system project developed with Java and MySQL to handle accounts, transactions, and data management.",
-    features: ["Account management", "Transaction history", "Data validation and security"],
-    challenge:
-      "Ensured data consistency and secure transaction handling in Java backend.",
-    live: "https://letsau-bank-v2-ijc4.vercel.app/",
-    github: "https://github.com/cecilialetsau25/LetsauBankV2",
-    status: "Completed",
-    image: letsauImg,
-    category: "Personal",
-    technologies: {
-      Languages: ["Java", "HTML", "CSS"],
-      Frameworks: [],
-      Libraries: ["Bootstrap"],
-      Databases: ["MySQL"],
-      IDEs: ["IntelliJ IDEA"],
-    },
-  },
- {
-  title: "Cleanease Laundry System",
-  type: "Laundry Management System",
-  role: "Admin email**admin@sytem.com** password**Admin@123**--user register any",
-  description:
-    "A laundry management system built with Laravel and React that handles customer orders, real-time tracking, and automated notifications.",
-
-  features: [
-    "Customer order creation & tracking",
-    "Real-time order updates and notifications",
-    "Admin dashboard with analytics",
-    "Status categories: Pending, In Progress, Completed, Cancelled",
-    "Secure authentication for both users and admins"
-  ],
-
-  challenge:
-    "Built a full end-to-end system including authentication, CRUD operations, Supabase analytics for total orders, pending, completed, and cancelled counts, plus real-time admin and customer dashboards.",
-
-  live: "https://cleanease-v2.vercel.app/",
-  github: "https://github.com/cecilialetsau25/Cleanease_Laundry_System",
-
-  // 🔥 Added admin login + demo instructions
- 
-
-  status: "In Progress",
-  image: cleaneaseImg,
-  category: "Client",
-
-  technologies: {
-    Languages: ["PHP", "JavaScript (ES6+)", "HTML", "CSS"],
-    Frameworks: ["Laravel", "React"],
-    Libraries: ["Axios", "Tailwind CSS", "Bootstrap"],
-    Databases: ["MySQL", "Supabase"],
-    IDEs: ["VS Code", "IntelliJ IDEA"],
-    Tools: ["Vercel", "PHPUnit"]
-  }
-},
-
-  {
-    title: "MERN TypeScript To-Do",
-    type: "Task Management App",
-    role: "Full Stack Developer",
-    description:
-      "A full-stack To-Do application built with MongoDB, Express, React, Node.js, and TypeScript.",
-    features: ["Create, update, delete tasks", "Real-time updates", "Responsive frontend with TypeScript"],
-    challenge:
-      "Integrated frontend with backend REST APIs and hosted services on Render and Vercel.",
-    live: "https://mern-typescript-todo-72oo.vercel.app/",
-    github: "https://github.com/cecilialetsau25/mern-typescript-todo",
-    backend: "https://mern-typescript-todo-6.onrender.com/",
-    status: "Completed",
-    image: mernImg,
-    category: "Full Stack",
-    technologies: {
-      Languages: ["TypeScript", "JavaScript (ES6+)", "HTML", "CSS"],
-      Frameworks: ["React", "Express"],
-      Libraries: ["Tailwind CSS", "Mongoose"],
-      Databases: ["MongoDB"],
-      IDEs: ["VS Code"],
-      Tools: ["Render", "Vercel"],
-    },
-  },
-  {
-    title: "SpaniPlug",
-    type: "Web Application",
-    role: "Developer",
-    description:
-      "SpaniPlug is a web platform that connects consumers with service providers nearby.",
-    features: ["Browse and interact with service listings", "Real-time updates", "Responsive UI with reusable components"],
-    challenge:
-      "Built a real-time interactive platform using Supabase for backend data storage.",
-    live: "https://spaniplug.vercel.app/",
-    github: "",
-    status: "Completed",
-    image: spaniplugImg,
-    category: "Full Stack",
-    technologies: {
-      Languages: ["JavaScript (ES6+)", "HTML", "CSS"],
-      Frameworks: ["React"],
-      Database: ["Supabase"],
-      Libraries: ["Tailwind CSS"],
-      IDEs: ["VS Code"],
-      Tools: ["Vercel"],
-    },
-  },
-  {
-  title: "Angular Quotes App",
-  type: "Motivational Quotes App",
-  role: "Frontend Developer",
-  description:
-    "A standalone Angular application that displays random motivational quotes with a clean and responsive UI.",
-  features: ["Show random quotes", "Copy quote button", "Light/Dark mode", "Responsive design"],
-  challenge:
-    "Built as a standalone Angular app without NgModule, with routing and fully functional components. Deployed on GitHub and Vercel.",
-  live: "https://quotes-app-ten-kappa.vercel.app/" ,
-  github: "https://github.com/cecilialetsau25/quotes-app",
-  backend: "N/A",
-  status: "Completed",
-  image: quotesImg,
-  category: "Frontend",
-  technologies: {
-    Languages: ["TypeScript", "JavaScript", "HTML", "CSS"],
-    Frameworks: ["Angular (Standalone Components)"],
-    Libraries: ["None"],
-    Databases: ["N/A"],
-    IDEs: ["VS Code"],
-    Tools: ["GitHub", "Vercel"],
-  },
-},
-
-  {
-    title: "Blazor Portfolio App",
-    type: "Interactive C# Web App",
-    role: "Full Stack Developer",
-    description:
-      "A live Blazor WebAssembly app demonstrating interactive C# features including a calculator, unit converter, and counter.",
-    features: ["Interactive Calculator, Counter, and Unit Converter", "Fully responsive portfolio style", "Deployed on Netlify for public access"],
-    challenge:
-      "Implemented Blazor WebAssembly components for seamless client-side interactivity.",
-    live: "https://cheery-shortbread-e9e183.netlify.app/",
-    github: "https://github.com/cecilialetsau25/blazortools",
-    status: "Completed",
-    image: port6Img,
-    category: "Frontend",
-    technologies: {
-      Languages: ["C#", "HTML", "CSS"],
-      Frameworks: ["Blazor WebAssembly"],
-      Libraries: [".NET 10.0"],
-      IDEs: ["Visual Studio"],
-      Tools: ["Netlify"],
-    },
-  },
-];
+import { projectsData, categories } from "./projectData";
 
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState("All");
+  const navigate = useNavigate();
 
   const filteredProjects =
     activeCategory === "All"
       ? projectsData
-      : projectsData.filter((project) => project.category === activeCategory);
+      : projectsData.filter(
+          (project) => project.category === activeCategory
+        );
 
   return (
     <section id="projects" className="py-16 bg-transparent">
       <div className="max-w-6xl mx-auto px-6">
-        <motion.h3
-          className="text-5xl md:text-6xl font-extrabold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-sky-300 to-sky-200 drop-shadow-md"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          Projects
-        </motion.h3>
+
+       <motion.h3
+  className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-sky-200 leading-tight break-words"
+  initial={{ opacity: 0, y: -10 }}
+  animate={{ opacity: 1, y: 0 }}
+>
+  Projects
+</motion.h3>
+
 
         {/* Category Filter */}
         <div className="flex flex-wrap gap-3 mb-10">
@@ -370,7 +39,7 @@ export default function Projects() {
                 activeCategory === cat
                   ? "bg-cyan-400 text-black"
                   : "bg-white/10 text-white hover:bg-white/20"
-              } transition-colors duration-300`}
+              }`}
             >
               {cat}
             </button>
@@ -382,78 +51,45 @@ export default function Projects() {
           {filteredProjects.map((project, index) => (
             <motion.div
               key={index}
-              className="bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl p-6 shadow-lg cursor-pointer flex flex-col justify-start items-start text-white transition-transform duration-200"
-              whileHover={{ scale: 1.02 }}
+              onClick={() => navigate(`/projects/${index}`)}
+              className="group bg-white/5 border border-white/10 rounded-2xl p-6 cursor-pointer flex flex-col text-white"
+              whileHover={{ scale: 1.03 }}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.35, delay: index * 0.06 }}
             >
-              <div className="w-full rounded-lg overflow-hidden mb-4">
-                <img src={project.image} alt={project.title} className="w-full object-cover h-40" />
-              </div>
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-40 object-cover rounded-lg mb-4"
+              />
 
-              <div className="mb-3 w-full flex justify-between items-center">
+              {/* Status badge stays */}
+              {project.status && (
                 <span
-                  className={`px-2 py-1 rounded-full text-[11px] font-semibold ${
-                    project.status && project.status.toLowerCase().includes("complete")
-                      ? "bg-green-500/90 text-white"
-                      : "bg-yellow-400/90 text-black"
+                  className={`mb-2 px-2 py-1 w-fit rounded-full text-[11px] font-semibold ${
+                    project.status === "Completed"
+                      ? "bg-green-500"
+                      : "bg-yellow-400 text-black"
                   }`}
                 >
                   {project.status}
                 </span>
-              </div>
-
-              <h4 className="font-semibold text-lg mb-1 text-white">{project.title}</h4>
-              <p className="text-xs mb-1 text-slate-200">{project.type}</p>
-              <p className="text-xs mb-2 italic text-slate-300">Role: {project.role}</p>
-
-              <p className="text-sm mb-2 text-slate-200">{project.description}</p>
-
-              {project.features && (
-                <ul className="text-xs mb-2 text-slate-300 list-disc list-inside">
-                  {project.features.map((feat, i) => (
-                    <li key={i}>{feat}</li>
-                  ))}
-                </ul>
               )}
 
-              {project.challenge && (
-                <p className="text-xs mb-2 text-amber-300 italic">
-                  Challenge: {project.challenge}
-                </p>
-              )}
+              <h4 className="font-semibold text-lg">{project.title}</h4>
+              <p className="text-xs text-slate-300">{project.type}</p>
+              <p className="text-xs italic text-slate-400 mb-3">
+                Role: {project.role}
+              </p>
 
-              <div className="flex flex-wrap gap-2 mb-4">
-                {Object.values(project.technologies).flat().map((tech, i) => (
-                  <span key={i} className="bg-white/6 px-2 py-1 rounded-full text-[11px] text-white">
-                    {tech}
-                  </span>
-                ))}
-              </div>
+              <p className="text-sm text-slate-300 mb-4 line-clamp-3">
+                {project.description}
+              </p>
 
-              <div className="mt-auto flex gap-3 w-full">
-                {project.live && (
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-cyan-400 hover:bg-cyan-500 text-black font-semibold py-2 px-3 rounded-lg transition-colors duration-300"
-                  >
-                    Live
-                  </a>
-                )}
-                {project.github && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-white/6 border border-white/8 text-white font-semibold py-2 px-3 rounded-lg text-sm hover:bg-white/10 transition-colors duration-300"
-                  >
-                    <FaGithub size={16} />
-                    GitHub
-                  </a>
-                )}
+              {/* View details indicator */}
+              <div className="mt-auto flex items-center gap-2 text-cyan-400 font-semibold group-hover:gap-3 transition-all">
+                <span>View details</span>
+                <FaArrowRight size={14} />
               </div>
             </motion.div>
           ))}
